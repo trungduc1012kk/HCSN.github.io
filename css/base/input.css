@@ -1,0 +1,30 @@
+.form-input{
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.form-input .icon{
+    position: absolute;
+    left: 7px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.input{
+    background-color: #ffffff;
+    border-radius: 2.5px;
+    border: 1px solid #afafaf;
+    height: 35px;
+    overflow: hidden;
+}
+
+.input:focus-visible,
+.input:hover{
+    outline: none;
+    border-color: #1aa4c8;
+}
+
+.form-input .input-icon{
+    padding-left: 38px;
+}

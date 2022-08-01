@@ -1,0 +1,623 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý tài sản</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="../../css/main.css" />
+    <link rel="stylesheet" href="../../css/page/assetsPage.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="menu">
+        <div class="menu-top">
+          <div class="brand">
+            <div class="icon-logo logo"></div>
+            <h1 class="brand__text">MISA QLTS</h1>
+          </div>
+          <ul class="navbar">
+            <li class="nav-item">
+              <div class="icon">
+                <div class="icon-tivi"></div>
+              </div>
+              <div class="nav-item__text">Tổng quan</div>
+            </li>
+            <li class="nav-item active">
+              <div class="icon">
+                <div class="icon-oto"></div>
+              </div>
+              <div class="nav-item__text">Tài sản</div>
+            </li>
+            <li class="nav-item">
+              <div class="icon"><div class="icon-street"></div></div>
+              <div class="nav-item__text">Tài sản HT-DB</div>
+            </li>
+            <li class="nav-item">
+              <div class="icon"><div class="icon-tool"></div></div>
+              <div class="nav-item__text">Công cụ công dụng</div>
+            </li>
+            <li class="nav-item">
+              <div class="icon"><div class="icon-category"></div></div>
+              <div class="nav-item__text">Danh mục</div>
+            </li>
+            <li class="nav-item">
+              <div class="icon"><div class="icon-search__black"></div></div>
+              <div class="nav-item__text">Tra cứu</div>
+            </li>
+            <li class="nav-item">
+              <div class="icon"><div class="icon-report"></div></div>
+              <div class="nav-item__text">Báo cáo</div>
+            </li>
+          </ul>
+        </div>
+        <div class="menu-bottom">
+          <button class="btn zoom-in" id="zoom">
+            <div class="btn__icon center">
+              <div class="icon-left"></div>
+            </div>
+          </button>
+        </div>
+      </div>
+      <div class="header">
+        <div class="header__left">
+          <h3>Danh sách tài sản</h3>
+        </div>
+        <div class="header__right">
+          <p>Sở tài chính</p>
+          <div class="input-number header__year">
+            <p>Năm</p>
+            <input type="text" value="2022">
+            <div class="up-down">
+              <div class="up"><div class="btn icon-up__black"></div></div>
+              <div class="down"><div class="btn icon-down__black"></div></div>
+            </div>
+          </div>
+          <div class="icon">
+            <div class="icon-notify"></div>
+          </div>
+          <div class="icon">
+            <div class="icon-option"></div>
+          </div>
+          <div class="icon">
+            <div class="icon-notify"></div>
+          </div>
+          <div class="icon">
+            <div class="icon-user"></div>
+          </div>
+          <div class="icon-down__black"></div>
+        </div>
+      </div>
+      <div class="main">
+        <div class="main-controler">
+          <div class="main-controler__left">
+            <div class="form-input">
+              <div class="icon">
+                <div class="icon-search"></div>
+              </div>
+              <input
+                class="input input-icon"
+                type="text"
+                placeholder="Tìm kiếm tài sản"
+              />
+            </div>
+            <div class="combobox">
+              <div class="icon">
+                <div class="icon-filter"></div>
+              </div>
+              <input
+                class="input input-icon"
+                type="text"
+                value="Loại tài sản"
+                readonly
+              />
+              <div class="up-down">
+                <div class="down"><div class="btn icon-down__black"></div></div>
+              </div>
+              <div class="drop-down">
+                <div class="drop-down__item">Cá nhân</div>
+                <div class="drop-down__item">Tập thể</div>
+                <div class="drop-down__item">Khác</div>
+              </div>
+            </div>
+            <div class="combobox">
+              <div class="icon">
+                <div class="icon-filter"></div>
+              </div>
+              <input
+                class="input input-icon"
+                type="text"
+                value="Bộ phận sử dụng"
+                readonly
+              />
+              <div class="up-down">
+                <div class="down"><div class="btn icon-down__black"></div></div>
+              </div>
+              <div class="drop-down">
+                <div class="drop-down__item">Cá nhân</div>
+                <div class="drop-down__item">Tập thể</div>
+                <div class="drop-down__item">Khác</div>
+              </div>
+            </div>
+          </div>
+          <div class="main-controler__right">
+            <button commandType="add" class="button">+Thêm tài sản</button>
+            <button class="btn">
+              <div class="icon">
+                <div commandType="import" class="icon-excel"></div>
+              </div>
+            </button>
+            <button class="btn">
+              <div class="icon">
+                <div commandType="delete" class="icon-delete"></div>
+              </div>
+            </button>
+          </div>
+        </div>
+
+        <div id="table">
+          <div class="table">
+            <table>
+              <thead>
+                <tr>
+                  <th class="th-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </th>
+                  <th>STT</th>
+                  <th>Mã tài sản</th>
+                  <th>Loại tài sản</th>
+                  <th>Bộ phận sử dụng</th>
+                  <th>Số lượng</th>
+                  <th>Nguyên giá</th>
+                  <th>HM/KH lũy kế</th>
+                  <th>Giá trị còn lại</th>
+                  <th>Chức năng</th>
+                </tr>
+              </thead>
+
+              <tbody>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id=""  />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+                <tr>
+                  <td class="td-checkbox">
+                    <input type="checkbox" name="" id="" />
+                  </td>
+                  <td>STT</td>
+                  <td>Mã tài sản</td>
+                  <td>Loại tài sản</td>
+                  <td>Bộ phận sử dụng</td>
+                  <td>Số lượng</td>
+                  <td>Nguyên giá</td>
+                  <td>HM/KH lũy kế</td>
+                  <td>Giá trị còn lại</td>
+                  <td>Chức năng</td>
+                </tr>
+              </tbody>
+              <thead>
+                <tr>
+                  <td colspan="5">
+                    <div class="table-footer">
+                      <div class="total-Assets">
+                        Tổng số: <span>200 bản ghi</span>
+                      </div>
+                      <div class="combobox">
+                        <input
+                          class="input input-icon"
+                          type="number"
+                          value="20"
+                          readonly
+                        />
+                        <div class="up-down">
+                          <div class="down">
+                            <div class="btn icon-down__black"></div>
+                          </div>
+                        </div>
+                        <div class="drop-down">
+                          <div class="drop-down__item active">Cá nhân</div>
+                          <div class="drop-down__item">Tập thể</div>
+                          <div class="drop-down__item">Khác</div>
+                        </div>
+                      </div>
+                      <div class="page-nav">
+                        <div class="page-nav__item page-nav__prev">
+                          <div class="icon">
+                            <div class="icon-prev"></div>
+                          </div>
+                        </div>
+                        <div class="page-nav__item page-nav__number">1</div>
+                        <div class="page-nav__item page-nav__number">2</div>
+                        <div class="page-nav__item page-nav__number">...</div>
+                        <div class="page-nav__item page-nav__number">10</div>
+                        <div class="page-nav__item page-nav__prev">
+                          <div class="icon">
+                            <div class="icon-next"></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </td>
+                  <td class="bold">13</td>
+                  <td class="bold">249.000.000</td>
+                  <td class="bold">12.878.333</td>
+                  <td class="bold">44.098.000</td>
+                  <td class="bold"></td>
+                </tr>
+              </thead>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- from thêm mới -->
+    <div id="form-detail" class="popup">
+      <div class="form-detail__container">
+        <div class="form-detail__header">
+          <div class="form-detail__text"><h2>Thêm tài sản</h2></div>
+          <div commandType="close" class="form-detail__close">
+            <div class="icon">
+              <div class="icon-close"></div>
+            </div>
+          </div>
+        </div>
+        <div class="form-detail__content">
+          <div class="row">
+            <label for="">Mã tài sản <span>*</span></label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" />
+            </div>
+          </div>
+
+          <div class="row col-2">
+            <label for="">Tên tài sản <span>*</span></label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" placeholder="Nhập tên tài sản" />
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Mã bộ phận sử dụng <span>*</span></label>
+            <div class="combobox">
+              <input class="input input-icon" readonly placeholder="Chọn mã bộ phận sử dụng" />
+              <div class="up-down">
+                <div class="down">
+                  <div class="btn icon-down__black"></div>
+                </div>
+              </div>
+              <div class="drop-down">
+                <div class="drop-down__item">Cá nhân</div>
+                <div class="drop-down__item">Tập thể</div>
+                <div class="drop-down__item">Khác</div>
+              </div>
+            </div>
+          </div>
+          <div class="row col-2">
+            <label for="">Tên bộ phận sử dụng</label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" readonly />
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Mã loại tài sản <span>*</span></label>
+            <div class="combobox">
+              <input class="input input-icon" readonly placeholder="Chọn mã loại tài sản" />
+              <div class="up-down">
+                <div class="down">
+                  <div class="btn icon-down__black"></div>
+                </div>
+              </div>
+              <div class="drop-down">
+                <div class="drop-down__item">Cá nhân</div>
+                <div class="drop-down__item">Tập thể</div>
+                <div class="drop-down__item">Khác</div>
+              </div>
+            </div>
+          </div>
+          <div class="row col-2">
+            <label for="">Tên loại tài sản</label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" readonly />
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Số lượng <span>*</span></label>
+            <div class="form-input input-number">
+                <input class="input" type="text" value="2022">
+                <div class="up-down">
+                  <div class="up"><div class="btn icon-up__black"></div></div>
+                  <div class="down"><div class="btn icon-down__black"></div></div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Nguyên giá <span>*</span></label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" />
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Số năm sử dụng <span>*</span></label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" />
+            </div>
+          </div>
+
+          <div class="row">
+            <label for="">Tỷ lệ hao mòn <span>*</span></label>
+            <div class="form-input input-number">
+                <input class="input" type="text" value="2022">
+                <div class="up-down">
+                  <div class="up"><div class="btn icon-up__black"></div></div>
+                  <div class="down"><div class="btn icon-down__black"></div></div>
+                </div>
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Giá trị hao mòn <span>*</span></label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" />
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Năm theo dõi</label>
+            <div class="form-input">
+              <input class="input input-icon" type="text" readonly />
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Ngày mua <span>*</span></label>
+            <div class="form-input">
+              <input class="input input-icon" type="date" value="yyyy-MM-dd" />
+            </div>
+          </div>
+          <div class="row">
+            <label for="">Ngày bắt đầu sử dụng <span>*</span></label>
+            <div class="form-input">
+              <input class="input input-icon" type="date" />
+            </div>
+          </div>
+        </div>
+        <div class="form-detail__controler">
+          <button commandType="close" class="button button__close">hủy</button>
+          <button class="button button__save">lưu</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Jquery lib -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- form detail -->
+    <script src="../../js/assets/formDetail.js"></script>
+
+    <!-- Asset Page -->
+    <script src="../../js/assets/assets.js"></script>
+  </body>
+</html>

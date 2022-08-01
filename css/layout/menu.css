@@ -1,0 +1,81 @@
+
+
+
+
+.menu{
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    box-shadow: inset 0 3px 6px rgba(0, 0, 0, .16);
+}
+
+.menu .brand{
+    height: 50px;
+    display: flex;
+    align-items: center;
+    padding: 11px 15px 4px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.logo {
+    padding-right: 15px;
+}
+
+.menu .brand h1{
+    margin-left: 15px;
+    font-size: 28px;
+}
+
+.navbar{
+    padding: 15px 11px;
+}
+
+.menu .navbar .nav-item{
+    display: flex;
+    align-items: center;
+    height: 44px;
+    padding: 0 10px;
+    border-radius: 6px;
+    border: 1px solid #1c3048;
+    cursor: pointer;
+}
+
+
+.menu .navbar .nav-item.active,
+.menu .navbar .nav-item:hover{
+    background-color: #1aa4c8;
+}
+
+.menu .navbar .nav-item .nav-item__text{
+    margin-left: 10px;
+}
+
+.menu-bottom{
+    height: 44px;
+    border-top: 1px solid #bbb;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    padding: 0 15px;
+}
+
+.menu-bottom .btn{
+    padding: 4px;    
+    background-color: #1c3048;
+    border-radius: 3px;
+    border: 2px solid #ccc;
+    margin-right: 5px;
+}
+
+.menu-bottom .btn .btn__icon{
+    width: 12px;
+    height: 12px;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+

@@ -1,0 +1,48 @@
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+}
+
+.header__right {
+  display: flex;
+  align-items: center;
+}
+
+.header__year {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  background-color: rgba(26, 164, 200, 0.2);
+  border-radius: 3px;
+  width: 112px;
+  height: 30px;
+  overflow: hidden;
+  margin-right: 7px;
+}
+
+.header__year input{
+  text-align: center;
+  font-weight: bold;
+  width: 30px;
+  background-color: transparent;
+  border: 1px solid transparent;
+}
+
+.header__year input:focus-visible{
+  outline: none;
+  border: none;
+}
+
+.header__right > p {
+  margin-right: 26px;
+}
+
+.header .icon{
+    margin-left: 20px;
+}
+
+.header > .icon-down__black{
+    margin-left: 8px;
+}

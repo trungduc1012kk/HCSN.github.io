@@ -1,0 +1,53 @@
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    grid-template-rows: 44px calc(100% - 44px);
+    overflow: hidden;
+}
+
+.menu{
+    background-color: #1c3048;
+    grid-row: 1/3;
+    color: #fff;
+}
+
+.header{
+    background-color: #fff;
+}
+
+.main{
+    background-color: #f4f7ff;
+    padding: 0 20px;
+    padding-bottom: 16px;
+    height: 100%;
+    overflow: hidden;
+}
+
+.main .main-controler{
+    height: 62px;
+    width: auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main .main-controler__left,
+.main .main-controler__right{
+    display: flex;
+    gap: 11px;
+}
+
+.main-controler__right .btn{
+    background-color: #ffffff;
+    border-radius: 3px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, .16);
+    width: 36px;
+    height: 36px;
+    overflow: hidden;
+    border: none;
+}
+
+
+
