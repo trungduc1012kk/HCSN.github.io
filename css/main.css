@@ -7,7 +7,9 @@
 @import url("./base/combobox.css");
 @import url("./layout/table.css");
 @import url("./layout/formDetail.css");
-
+@import url("./layout/contextMenu.css");
+@import url("./layout/formConfirm.css");
+@import url("./layout/formNotice.css");
 
 * {
   font-family: "Roboto", sans-serif;
@@ -27,4 +29,8 @@ h2 {
 
 .bold {
   font-weight: bold;
+}
+
+.text-right {
+  text-align: right;
 }

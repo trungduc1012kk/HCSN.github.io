@@ -1,115 +1,154 @@
-#table{
-    
-    width: 100%;
-    height: calc(100% - 62px);
+#table {
+  width: 100%;
+  height: calc(100% - 62px);
 }
 
-.table{
-    width: 100%;
-    height: 100%;
-    background-color: #ffffff;
-    border-radius: 3.5px;
-    border: 1px solid #afafaf;
-    box-shadow: 0 3px 10px rgba(0, 0, 0, .16);
-    overflow: auto;position: relative;
+.table {
+  width: 100%;
+  height: 100%;
+  background-color: #ffffff;
+  border-radius: 3.5px;
+  border: 1px solid #afafaf;
+  box-shadow: 0 3px 10px rgba(0, 0, 0, 0.16);
+  overflow: auto;
+  position: relative;
 }
 
-.table::-webkit-scrollbar{
-    width: 2px;
+.table::-webkit-scrollbar {
+  width: 2px;
 }
 
-.table::-webkit-scrollbar-thumb{
-    border-radius: 2px;
-    background-color: #ccc;
-
+.table::-webkit-scrollbar-thumb {
+  border-radius: 2px;
+  background-color: #ccc;
 }
 
-.table::-webkit-scrollbar-track{
+table {
+  width: 100%;
+  height: fit-content;
+  max-width: 100%;
+  border-collapse: collapse;
 }
 
-table{
-    width: 100%;
-    height: fit-content;
-    max-width: 100%;
+table th,
+table td {
+  font-size: 14px;
+  padding: 0 16px;
+  line-height: calc(38 / 14);
+  text-align: left;
+  white-space: nowrap;
 }
 
-table th,td{
-    font-size: 14px;
-    padding: 0 16px;
-    line-height: calc(38 / 14);
-    text-align: left;
-    border-bottom: 1px solid #ccc;
-
+table tbody td {
+  border-bottom: 1px solid #ccc;
 }
 
-table tr{
-    cursor: pointer;
-    height: 38px !important;
+table tr {
+  height: 38px !important;
 }
 
 table tbody tr.active,
-table tbody tr:hover{
-    background-color: rgba(26, 164, 200, .2);;
+table tbody tr:hover {
+  background-color: rgba(26, 164, 200, 0.2);
 }
 
-table thead tr{
-    position: sticky;
-    top: 0;
-    background-color: #f5f5f5;
+table thead tr {
+  position: sticky;
+  top: 0;
+  background-color: #f5f5f5;
 }
 
-table thead:last-of-type tr{
-    position: sticky;
-    bottom: 0;
-    border-top: 1px solid #ccc;
-    background-color: #ffffff;
+table tbody tr {
+  cursor: pointer;
 }
 
-table thead:last-of-type tr td span{
-    font-weight: bold;
+table thead:last-of-type tr {
+  position: sticky;
+  bottom: 0;
+  left: 0;
+  background-color: #ffffff;
 }
 
-.table-footer{
-    display: flex;
-    gap: 20px;
-    align-items: center;
+table thead:last-of-type tr td span {
+  font-weight: bold;
 }
 
-.table-footer .combobox{
-    background-color: #ffffff;
-    border-radius: 2.625px;
-    border: 1px solid #afafaf;
-    width: 59px;
-    height: 25px;
-    overflow: hidden;
+.table-footer {
+  width: 100%;
+  display: flex;
+  gap: 20px;
+  align-items: center;
 }
 
-.table-footer .combobox input{
-    width: 59px;
-    height: 25px;
-    border: none;
+.table-footer .combobox {
+  background-color: #ffffff;
+  border-radius: 2.625px;
+  border: 1px solid #afafaf;
+  width: 59px;
+  height: 25px;
 }
 
-.table-footer .page-nav{
-    display: flex;
-    gap: 10px;
-    align-items: center;
-    height: 100%;
+.table-footer .combobox input {
+  width: 100%;
+  height: 100%;
+  border: none;
 }
 
-.table-footer .page-nav .page-nav__item{
-    background-color: #ffffff;
-    width: 20px;
-    height: 20px;
-    line-height: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 6px;
-    cursor: pointer;
+.table-footer .combobox .drop-down {
+  bottom: 100%;
+  left: 0;
+  top: unset;
 }
 
-.table-footer .page-nav .page-nav__item:hover{
-    background-color: #f5f5f5;
+.table-footer .combobox .drop-down .drop-down__item {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0;
 }
 
+.table-footer .paging {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  height: 100%;
+  width: 245px;
+  justify-content: start;
+}
+
+.table-footer .paging .paging__item {
+  background-color: #ffffff;
+  width: 20px;
+  height: 20px;
+  line-height: 1;
+  font-size: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.table-footer .paging .paging__item.active {
+  background-color: #f5f5f5;
+  font-weight: bold;
+}
+.table-footer .paging .paging__item:hover {
+  background-color: #f5f5f5;
+}
+
+table tbody tr.active .trow-control .icon,
+table tbody tr:hover .trow-control .icon {
+  visibility: visible;
+}
+
+.trow-control {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+}
+
+.trow-control .icon {
+  visibility: hidden;
+}

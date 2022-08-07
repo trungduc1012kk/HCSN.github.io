@@ -6,6 +6,7 @@
     border-radius: 3px;
 }
 
+
 .combobox:hover{
     border-color: #1aa4c8;
 }
@@ -41,7 +42,7 @@
     justify-content: center;
 }
 
-.combobox .drop-down{
+.drop-down{
     width: 100%;
     height: fit-content;
     position: absolute;
@@ -56,7 +57,7 @@
     display: none;
 }
 
-.combobox .drop-down .drop-down__item{
+.drop-down .drop-down__item{
     border-radius: 2.5px;
     height: 35px;
     width: 100%;
@@ -65,7 +66,7 @@
     border: 1px solid #f4f7ff;
 }
 
-.combobox .drop-down .drop-down__item.active,
-.combobox .drop-down .drop-down__item:hover{
+.drop-down .drop-down__item.active,
+.drop-down .drop-down__item:hover{
   background-color: rgba(26, 164, 200, 0.2);
 }
